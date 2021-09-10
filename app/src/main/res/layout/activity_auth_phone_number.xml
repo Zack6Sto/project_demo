@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="dataViewModel"
+            type="com.example.project_demo.view.authPhoneNumber.AuthPhoneNumberViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.authPhoneNumber.AuthPhoneNumberActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Phone Number"
+                android:textSize="24dp"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text1"
+                android:layout_marginTop="20dp"
+                android:text="Please enter your Phone Number to continue"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text2"
+                android:text="+66"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text2"
+                android:layout_marginTop="@dimen/d30dp"
+                android:imeOptions="actionDone"
+                android:maxLength="12"
+                android:hint="+66994733909"
+                android:background="@drawable/bg_et"
+                android:layout_marginStart="@dimen/d40dp"
+                android:layout_marginEnd="@dimen/d40dp"
+                android:textSize="24dp"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutContinue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edPhone">
+
+                <Button
+                    android:id="@+id/btnPhoneContinue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/d10dp"
+                    android:layout_marginEnd="@dimen/d10dp"
+                    android:background="@drawable/bg_btn"
+                    android:onClick="@{()-> dataViewModel.onClickPhoneContinue()}"
+                    android:paddingStart="@dimen/d10dp"
+                    android:paddingEnd="@dimen/d10dp"
+                    android:text="CONTINUE"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColorWhite"
+                    android:textSize="@dimen/text_size_18dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.example.project_demo.utils.PinEntryEditText
+                android:id="@+id/etPinEntry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutContinue"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:cursorVisible="false"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:maxLength="6"
+                app:pinLineStroke="5dp"
+                app:pinLineStrokeSelected="5dp"
+                android:textIsSelectable="false"
+                android:textColor="@color/purple_200"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text="@{dataViewModel.etOtp}"
+                android:visibility="visible"
+                android:imeOptions="actionDone"
+                app:pinLineColors="@color/line_colors"/>
+
+<!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                android:id="@+id/layoutCountdown"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/etPinEntry">-->
+
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/txt_countdown"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Your code will expire in "-->
+<!--                    android:textSize="18dp"/>-->
+
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/tvCountdown"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:text="@{dataViewModel.tvCountDown}"-->
+<!--                    android:textSize="18dp"/>-->
+
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/txt_minutes"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text=" minutes."-->
+<!--                    android:textSize="18dp"/>-->
+
+<!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutResend"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPinEntry">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_resend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Didn't receive the OTP? "
+                    android:textSize="18dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvResend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:onClick="@{()-> dataViewModel.onClickResend()}"
+                    android:textColor="@color/blue"
+                    android:textSize="20dp"
+                    android:text="Resend"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutResend">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:onClick="@{()-> dataViewModel.onClickCancel()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn"
+                    android:textColor="@color/textColorWhite"
+                    android:paddingStart="@dimen/d10dp"
+                    android:paddingEnd="@dimen/d10dp"
+                    android:layout_marginStart="@dimen/d10dp"
+                    android:layout_marginEnd="@dimen/d10dp"
+                    android:text="Cancel"
+                    android:textSize="@dimen/text_size_18dp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btnOk"
+                    android:onClick="@{()-> dataViewModel.onClickOK()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn"
+                    android:textColor="@color/textColorWhite"
+                    android:paddingStart="@dimen/d10dp"
+                    android:paddingEnd="@dimen/d10dp"
+                    android:layout_marginStart="@dimen/d10dp"
+                    android:layout_marginEnd="@dimen/d10dp"
+                    android:text="Ok"
+                    android:textSize="@dimen/text_size_18dp"
+                    android:textAllCaps="false"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+<!--    android:text="Please enter OTP we send to your mobile via SMS"-->

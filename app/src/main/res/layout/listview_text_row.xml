@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/dragArea"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/listview_row"
+            style="@style/Menu_Item_Full"
+            android:drawablePadding="5dp" />
+
+        <ImageView
+            android:id="@+id/listview_right_image"
+            style="@style/Menu_Item_Full"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <import type="com.example.project_demo.vo.Resource" />
+
+        <import type="com.example.project_demo.vo.enumClass.Status" />
+
+        <variable
+            name="loadResource"
+            type="com.example.project_demo.vo.Resource" />
+
+        <variable
+            name="dataViewModel"
+            type="com.example.project_demo.view.contact.ContactViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.contact.ContactActivity">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_facebook"
+            android:onClick="@{() -> dataViewModel.onClickLoginFaceBook()}"
+            android:text="Facebook"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/textColorWhite"
+            android:background="@drawable/bg_btn"
+            android:layout_marginStart="@dimen/d40dp"
+            android:layout_marginEnd="@dimen/d40dp"
+            android:layout_marginTop="@dimen/d40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_line"
+            android:onClick="@{() -> dataViewModel.onClickLoginLine()}"
+            android:text="Line"
+            android:backgroundTint="@color/confirm_circle"
+            android:textColor="@color/textColorWhite"
+            android:background="@drawable/bg_btn"
+            android:layout_marginStart="@dimen/d40dp"
+            android:layout_marginEnd="@dimen/d40dp"
+            android:layout_marginTop="@dimen/d10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_facebook"/>
+
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:translationZ="1dp"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:visibleGone="@{loadResource.status == Status.LOADING}">-->
+
+<!--            <include layout="@layout/item_progress" />-->
+
+<!--        </FrameLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

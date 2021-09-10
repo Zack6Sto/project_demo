@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="text"
+            type="String" />
+
+        <variable
+            name="status"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d10dp"
+        android:layout_marginEnd="@dimen/d10dp"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/d5dp"
+        android:paddingRight="@dimen/d5dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lyContentDialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d10dp"
+            android:layout_marginTop="@dimen/d10dp"
+            android:layout_marginEnd="@dimen/d10dp"
+            android:layout_marginBottom="@dimen/d10dp"
+            android:background="@drawable/bg_dialog"
+            android:paddingBottom="@dimen/d15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layAnimation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSuccess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/d20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="4"
+                android:paddingLeft="@dimen/margin_padding_size_small"
+                android:paddingTop="@dimen/margin_padding_size_medium"
+                android:paddingRight="@dimen/margin_padding_size_small"
+                android:text="@{text}"
+                android:textColor="@color/textColorBlack"
+                android:textSize="@dimen/text_size_16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layAnimation"
+                tools:ignore="RelativeOverlap,SpUsage" />
+
+
+            <View
+                android:id="@+id/viewLine"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tvOkey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d5dp"
+                android:layout_marginTop="@dimen/d15dp"
+                android:layout_marginEnd="@dimen/d5dp"
+                android:layout_marginBottom="@dimen/d20dp"
+                android:background="@drawable/bg_btn"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:text="@string/txt_button_okey"
+                android:textColor="@color/textColorWhite"
+                android:textSize="@dimen/text_size_18dp"
+                app:layout_constraintEnd_toStartOf="@+id/guildLine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewLine"
+                tools:ignore="RelativeOverlap" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guildLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tvCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d10dp"
+                android:layout_marginTop="@dimen/d15dp"
+                android:layout_marginEnd="@dimen/d5dp"
+                android:layout_marginBottom="@dimen/d20dp"
+                android:background="@drawable/bg_btn"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:text="@string/txt_button_cancel"
+                android:textColor="@color/textColorWhite"
+                android:textSize="@dimen/text_size_18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guildLine"
+                app:layout_constraintTop_toBottomOf="@+id/viewLine"
+                tools:ignore="RelativeOverlap"
+                android:layout_marginRight="@dimen/d5dp"
+                android:layout_marginLeft="@dimen/d10dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#3399CC</color>
+    <color name="teal_700">#FF018786</color>
+
+    // Text Color
+    <color name="textColorBlack">#000000</color>
+    <color name="textColorGray">#cbcbcb</color>
+    <color name="textColorWhite">#ffffff</color>
+
+    <!-- General -->
+    <color name="alert_circle">#CC0000</color>
+    <color name="confirm_circle">#669900</color>
+    <color name="info_cirle">#3579AA</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#707070</color>
+    <color name="blue">#3298CA</color>
+    <color name="white_fd">#FDFDFF</color>
+    <color name="dark_blue">#498399</color>
+    <color name="dark_gray">#5A5E61</color>
+    <color name="dark_gray2">#919295</color>
+    <color name="red">#C03B49</color>
+    <color name="black">#FF000000</color>
+    <color name="blue2">#3399CC</color>
+    <color name="gray2">#666666</color>
+
+    // Line
+    <color name="lineColorBlack" tools:keep="@color/lineColorBlack">#000000</color>
+    <color name="lineColorGray" tools:keep="@color/lineColorGray">#d4d4d4</color>
+    <color name="lineColorWhite" tools:keep="@color/lineColorWhite">#ffffff</color>
+    <color name="lineColor" tools:keep="@color/lineColor">#45959595</color>
+
+    <color name="colorItemLeft">#E6E4E4</color>
+    <color name="colorItemRight">#813fd7</color>
+
+    <color name="transparent">@android:color/transparent</color>
+</resources>

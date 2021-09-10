@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="dataViewModel"
+            type="com.example.project_demo.view.termOfService.TermOfServiceViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.termOfService.TermOfServiceActivity">
+
+        <WebView
+            android:id="@+id/webView_termOfService"
+            android:layout_marginBottom="@dimen/d10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/checkbox"/>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:onClick="@{()-> dataViewModel.onCheckBox()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d20dp"
+            android:layout_marginBottom="@dimen/d10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_ok"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_textViewCheckBox"
+            android:text="ยอมรับข้อตกลง"
+            android:textColor="@color/textColorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d5dp"
+            app:layout_constraintStart_toEndOf="@+id/checkbox"
+            app:layout_constraintTop_toTopOf="@+id/checkbox"
+            app:layout_constraintBottom_toBottomOf="@+id/checkbox"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_ok"
+            android:text="ยินยอม"
+            android:onClick="@{()-> dataViewModel.onClickOk()}"
+            android:enabled="@{dataViewModel.isStatusButtonClick()}"
+            android:background="@drawable/bg_btn"
+            android:textColor="@color/textColorWhite"
+            android:layout_marginStart="@dimen/d20dp"
+            android:layout_marginEnd="@dimen/d20dp"
+            android:layout_marginBottom="@dimen/d20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

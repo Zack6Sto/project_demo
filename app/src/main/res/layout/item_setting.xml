@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/textColorWhite">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginStart="@dimen/d10dp"
+            android:id="@+id/ivIcon"
+            android:layout_width="@dimen/d25dp"
+            android:layout_height="@dimen/d25dp"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/ic_baseline_settings_24"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/d10dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d10dp"
+            android:layout_marginEnd="@dimen/d10dp"
+            android:text="Setting"
+            android:gravity="center"
+            android:textColor="@color/textColorBlack"
+            android:textSize="@dimen/text_size_18dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/ivIcon"
+            card_view:layout_constraintEnd_toStartOf="@+id/ivNext"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_marginEnd="@dimen/d10dp"
+            android:id="@+id/ivNext"
+            android:layout_width="@dimen/d30dp"
+            android:layout_height="@dimen/d30dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="@dimen/d10dp" />
+
+        <View
+            android:id="@+id/lineView"
+            android:layout_marginBottom="@dimen/d2dp"
+            android:layout_marginTop="@dimen/d15dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/lineColorGray"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

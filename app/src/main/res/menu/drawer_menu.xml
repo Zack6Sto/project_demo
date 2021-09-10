@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/channels_menu"
+        android:icon="@drawable/ic_channels"
+        android:title="Channels" />
+    <item
+        android:id="@+id/groups_menu"
+        android:icon="@drawable/ic_baseline_supervisor_account_24"
+        android:title="Groups" />
+    <item
+        android:id="@+id/settings_menu"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings" />
+    <item
+        android:id="@+id/logout_menu"
+        android:icon="@drawable/ic_logout"
+        android:title="Log Out" />
+</menu>
